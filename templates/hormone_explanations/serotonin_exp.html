@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="explanation-container">
+    <button onclick="location.href='{{ url_for('index')}}';" class="home-button"></button>
+    <h2>Understanding Serotonin in Relationships</h2>
+    <p>
+        Serotonin, integral to mood regulation and emotional well-being, influences various aspects of romantic relationships, including bonding, communication, and conflict resolution.
+    </p>
+
+    <h3>How Serotonin Affects Relationships</h3>
+    <ul>
+        <li>
+            <strong>Mood and Stability:</strong> Balanced serotonin levels contribute to a positive and stable emotional climate in relationships.
+        </li>
+        <li>
+            <strong>Social Interactions:</strong> This neurotransmitter aids in interpreting social cues and fostering empathy, vital for healthy relationships.
+        </li>
+        <li>
+            <strong>Conflict Management:</strong> Adequate serotonin helps navigate disagreements with clarity and calmness, promoting resolution.
+        </li>
+    </ul>
+
+    <p>
+        Grasping serotonin's role offers insights into maintaining emotional health and cultivating stronger, more fulfilling connections. Explore how serotonin dynamics influence your relationship through the upcoming quiz.
+    </p>
+
+    <a href="{{ url_for('show_quiz', hormone='serotonin') }}" class="button">Begin Serotonin Quiz</a>
+</div>
+{% endblock %}

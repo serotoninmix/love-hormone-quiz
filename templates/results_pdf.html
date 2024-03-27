@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Hormonal Profile Results</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2mm 2mm 2mm 2mm;
+        }
+        body {
+            font-family: 'Helvetica', sans-serif;
+            color: #333;
+            background: #f4f4f4;
+            padding: 10px;
+        }
+        .results-container {
+            background: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .results-title {
+            color: #b76e79;
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .overall-results-section, .individual-hormone-results, .hormone-info-section {
+            border-top: 2px solid #b76e79;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        h2 {
+            color: #b76e79;
+            margin-bottom: 8px;
+        }
+        .detailed-feedback, .individual-hormone-result, .hormone-info {
+            padding: 10px;
+            margin-top: 8px;
+            background: #ecf0f1;
+            border-left: 4px solid #b76e79;
+            border-radius: 4px;
+        }
+        .hormone-name, .hormone-title, strong {
+            color: #b76e79;
+        }
+        p {
+            line-height: 1.5;
+            margin: 0 0 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h1 class="results-title">Your Hormonal Profile Results</h1>
+
+        <section class="overall-results-section">
+            <h2 class="overall-heading">Overall Results</h2>
+            <p><strong>Your score: {{ overall_score }}/10</strong></p>
+            <p><strong>Level: {{ overall_interpretation.level }}</strong></p>
+            <p>Interpretation: {{ overall_interpretation.interpretation }}</p>
+            <div class="detailed-feedback">
+                <h3>Detailed Feedback</h3>
+                <p><strong>Understanding:</strong> {{ detailed_feedback.Understanding }}</p>
+                <p><strong>Actionable Steps:</strong> {{ detailed_feedback['Actionable Steps'] }}</p>
+                <p><strong>Encouragement:</strong> {{ detailed_feedback.Encouragement }}</p>
+            </div>
+        </section>        
+
+        <section class="individual-hormone-results">
+            <h2 class="hormone-results-heading">Individual Hormone Results</h2>
+            {% for hormone, data in results_data.items() %}
+            <div class="individual-hormone-result">
+                <h3 class="hormone-name">{{ hormone.capitalize() }} Results</h3>
+                <p><strong>Level: {{ data['level'] }}</strong></p>
+                <p>Interpretation: {{ data['interpretation'] }}</p>
+            </div>
+            {% endfor %}
+        </section>        
+
+        <section class="hormone-info-section">
+            <h2 class="hormone-info-heading">Hormone Information</h2>
+            {% for hormone, definition in hormone_definitions.items() %}
+            <div class="hormone-info">
+                <h3 class="hormone-title">{{ hormone.capitalize() }}</h3>
+                <p>{{ definition }}</p>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Love Hormone Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <section class="welcome-section">
+            <h1>THE SCIENCE OF AFFECTION</h1> 
+            <h1>Your Hormonal Profile</h1>
+            <p>Welcome to Your Hormonal Profile!</p>
+            <p>Unlock the secrets of your heart with our captivating quiz, revealing the nine pivotal hormones that sculpt your experiences of love and connection. Whether your relationships are monogamous, polyamorous, or uniquely defined, this journey is tailored to deepen your understanding of how these hormonal forces shape your interactions and emotions. Delve into questions that illuminate the subtle dance of oxytocin, dopamine, serotonin, and others within you, offering a profound awareness of the unseen forces that influence love's ebb and flow in your life.</p>
+            <a href="{{ url_for('show_explanation', hormone='adrenaline') }}" class="start-quiz">Start the Quiz</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MariaSpectrum - All Rights Reserved. </p>
+    </footer>
+</body>
+</html>

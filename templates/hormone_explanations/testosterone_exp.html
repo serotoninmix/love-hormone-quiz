@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="explanation-container">
+    <button onclick="location.href='{{ url_for('index')}}';" class="home-button"></button>
+    <h2>Understanding Testosterone in Relationships</h2>
+    <p>
+        Testosterone is key in shaping desire, confidence, and behavioral dynamics within relationships. It influences not just sexual attraction but also aspects of social bonding and interpersonal interactions.
+    </p>
+
+    <h3>How Testosterone Affects Relationships</h3>
+    <ul>
+        <li>
+            <strong>Desire and Attraction:</strong> Testosterone drives sexual desire and can intensify the attraction phase in relationships.
+        </li>
+        <li>
+            <strong>Assertiveness and Confidence:</strong> It underpins assertive behaviors and self-confidence, affecting how individuals navigate romantic pursuits and relationship challenges.
+        </li>
+        <li>
+            <strong>Social Bonding:</strong> Beyond physical aspects, testosterone also plays a part in social bonding, influencing partner attachment and commitment.
+        </li>
+    </ul>
+
+    <p>
+        Recognizing the role of testosterone can help in understanding personal and partner behaviors, aiding in the cultivation of deeper and more satisfying relationships. Discover more about your relationship's dynamics through the upcoming quiz.
+    </p>
+
+    <a href="{{ url_for('show_quiz', hormone='testosterone') }}" class="button">Begin Testosterone Quiz</a>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="explanation-container">
+    <button onclick="location.href='{{ url_for('index')}}';" class="home-button"></button>
+    <h2>Understanding Vasopressin in Relationships</h2>
+    <p>
+        Vasopressin, sometimes known as the "monogamy hormone," plays a key role in enhancing pair bonding, trust, and attachment in relationships, influencing deeper emotional connections and commitment.
+    </p>
+
+    <h3>How Vasopressin Affects Relationships</h3>
+    <ul>
+        <li>
+            <strong>Pair Bonding:</strong> Vasopressin strengthens pair bonds, promoting loyalty and deep emotional connections in relationships.
+        </li>
+        <li>
+            <strong>Trust and Protection:</strong> It fosters trust and protective behaviors, which are vital for relationship security and stability.
+        </li>
+        <li>
+            <strong>Attachment and Social Bonding:</strong> Vasopressin facilitates attachment and social bonding, crucial for nurturing and maintaining strong relationships.
+        </li>
+    </ul>
+
+    <p>
+        By understanding the impact of vasopressin on your relationship, you can gain valuable insights into the dynamics of attachment and commitment. Explore these aspects further in the upcoming quiz.
+    </p>
+
+    <a href="{{ url_for('show_quiz', hormone='vasopressin') }}" class="button">Begin Vasopressin Quiz</a>
+</div>
+{% endblock %}

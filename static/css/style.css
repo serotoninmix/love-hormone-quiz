@@ -1,0 +1,388 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('../img/27935.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    margin: 0;
+    padding: 20px;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1); /* 10% opacity black overlay */
+    z-index: -1;
+}
+
+.welcome-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.75); /* White background with 75% opacity */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.welcome-section h1 {
+    color: #a6626e;
+    margin: 0;
+}
+
+.welcome-section p {
+    line-height: 1.6;
+    text-align: justify;
+    font-size: 16px;
+}
+
+/* Navigation Styles */
+nav ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #b76e79;
+}
+
+/* Button Styles */
+a.start-quiz {
+    display: block; 
+    width: max-content;
+    padding: 10px 20px;
+    margin: 20px auto 20px;
+    background-color: #b76e79;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+a.start-quiz:hover {
+    background-color: #a6626e;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Explanation Pages */
+.explanation-container {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: black;
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.explanation-container h2 {
+    color: #b76e79;
+    text-align: center; 
+}
+
+.explanation-container h3 {
+    color: #b76e79;
+}
+
+.explanation-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    text-align: center; 
+    color: black;
+}
+
+.explanation-container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.explanation-container li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.home-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: url('../img/home-icon.svg') no-repeat center;
+    border: none;
+    width: 40px; 
+    height: 40px;
+    cursor: pointer;
+}
+
+.button {
+    display: block;
+    width: max-content;
+    padding: 10px 20px;
+    margin: 20px auto 20px;
+    background-color: #b76e79;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #a6626e;
+}
+
+/* Quiz Pages */
+form {
+    max-width: 600px;
+    margin: 10px auto 2px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.75); /* Giving some opacity */
+    border-radius: 5px; /* Optional for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional for subtle shadow */
+}
+
+form .question {
+    border-left: 5px solid #b76e79;
+    margin: 10px 0;
+    padding-left: 10px; /* Only left padding to align text after the border */
+}
+
+.quiz-h2 {
+    color: #b76e79;
+    text-align: center;
+    font-size: 32px; 
+    margin: 5px auto 15px;
+}
+
+.question {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-left: 5px solid #b76e79;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.question p, .question label {
+    font-size: 15px; 
+    margin: 5px 0;
+    color: #000;
+}
+
+button[type="submit"] {
+    background-color: #b76e79;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto 10px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #a6626e;
+    display: block;
+}
+
+/* General Form Styles */
+.h1_form {
+    color: #a6626e;
+    text-align: center;
+}
+
+.user-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.p_form {
+    font-size: smaller;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Two-column Layout for First Three Questions */
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+/* Adjustments for Labels and Select Inputs */
+.user-form label, .user-form select {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.user-input, .submit-button {
+    width: auto;
+    padding: 10px;
+    margin: 10px 0; 
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#ethical-non-monogamy, label[for="ethical-non-monogamy"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Submit Button Styles */
+.submit-button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    background-color: #b76e79;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #a6626e;
+}
+
+/* Results Page Specific Styles */
+.results-container {
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.results-title {
+    color: #b76e79;
+    text-align: center;
+}
+
+/* Overall Results Section Styles */
+.overall-results-section {
+    background-color: rgba(247, 247, 247, 0.5);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.overall-heading {
+    color: #b76e79;
+}
+
+#overall-score-display, #overall-level-display, #overall-interpretation-display {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Detailed Feedback Styles */
+.detailed-feedback {
+    background-color: #fff; /* Adjust for better readability */
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.detailed-feedback h3 {
+    color: #a6626e;
+    margin-bottom: 10px;
+}
+
+.detailed-feedback p {
+    color: #333; /* For better readability, ensuring contrast */
+    font-size: 14px; /* Slightly smaller than other text */
+    line-height: 1.4;
+}
+
+.detailed-feedback strong {
+    font-weight: bold; /* Emphasize headings within the feedback */
+}
+
+/* Individual Hormone Results Styles */
+.individual-hormone-results {
+    margin: 20px 0;
+}
+
+.hormone-results-heading {
+    color: #b76e79;
+    padding-bottom: 10px;
+}
+
+.individual-hormone-result {
+    background-color: rgba(247, 247, 247, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.hormone-name {
+    color: #b76e79;
+}
+
+.hormone-level, .hormone-interpretation {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Hormone Information Section Styles */
+.hormone-info-section {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.hormone-info-heading {
+    color: #b76e79;
+}
+
+.hormone-info {
+    margin-bottom: 15px;
+}
+
+.hormone-title {
+    color: #b76e79;
+}
+
+.hormone-description {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}

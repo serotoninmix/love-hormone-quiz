@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Hormonal Profile Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6603ca504b7861001255eeb5&product=inline-share-buttons&source=platform" async="async"></script>
+</head>
+<body>
+    <div class="results-container">
+        <h1 class="results-title">Your Hormonal Profile Results</h1>
+
+        <section class="overall-results-section">
+            <h2 class="overall-heading">Overall Results</h2>
+            <p id="overall-score-display"><strong>Your score: {{ overall_score }}/10</strong></p>
+            <p id="overall-level-display"><strong>Level: {{ overall_interpretation.level }}</strong></p>
+            <p id="overall-interpretation-display">Interpretation: {{ overall_interpretation.interpretation }}</p>
+            <div class="detailed-feedback">
+                <h3>Detailed Feedback</h3>
+                <p><strong>Understanding:</strong> {{ detailed_feedback.Understanding }}</p>
+                <p><strong>Actionable Steps:</strong> {{ detailed_feedback['Actionable Steps'] }}</p>
+                <p><strong>Encouragement:</strong> {{ detailed_feedback.Encouragement }}</p>
+            </div>
+        </section>        
+
+        <section class="individual-hormone-results">
+            <h2 class="hormone-results-heading">Individual Hormone Results</h2>
+            {% for hormone, data in results_data.items() %}
+            <div class="individual-hormone-result">
+                <h3 class="hormone-name">{{ hormone.capitalize() }} Results</h3>
+                <p class="hormone-level"><strong>Level: {{ data['level'] }}</strong></p>
+                <p class="hormone-interpretation">Interpretation: {{ data['interpretation'] }}</p>
+            </div>
+            {% endfor %}
+        </section>  
+        <a href="{{ url_for('results_pdf') }}" class="button">Download PDF</a>
+        <div class="sharethis-inline-share-buttons"></div>            
+
+        <section class="hormone-info-section">
+            <h2 class="hormone-info-heading">Hormone Information</h2>
+            {% for hormone, definition in hormone_definitions.items() %}
+            <div class="hormone-info">
+                <h3 class="hormone-title">{{ hormone.capitalize() }}</h3>
+                <p class="hormone-description">{{ definition }}</p>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</body>
+</html>

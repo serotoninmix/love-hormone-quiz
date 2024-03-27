@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="explanation-container">
+    <button onclick="location.href='{{ url_for('index')}}';" class="home-button"></button>
+    <h2>Understanding Oxytocin in Relationships</h2>
+    <p>
+        Oxytocin, famously known as the "love hormone," plays a vital role in building trust, enhancing emotional bonds, and fostering empathy within romantic relationships.
+    </p>
+
+    <h3>How Oxytocin Affects Relationships</h3>
+    <ul>
+        <li>
+            <strong>Bonding and Trust:</strong> Oxytocin strengthens emotional bonds and trust, deepening intimacy and connection.
+        </li>
+        <li>
+            <strong>Empathy and Understanding:</strong> It boosts empathy and understanding, helping partners tune into each other's emotions and needs.
+        </li>
+        <li>
+            <strong>Stress Reduction:</strong> Oxytocin also serves as a natural stress reliever, promoting calmness and contentment in relationships.
+        </li>
+    </ul>
+
+    <p>
+        Gaining insight into oxytocin's influence on your relationship can enhance understanding and communication with your partner. The upcoming quiz offers an exploration of how oxytocin dynamics play out in your own relationship.
+    </p>
+
+    <a href="{{ url_for('show_quiz', hormone='oxytocin') }}" class="button">Begin Oxytocin Quiz</a>
+</div>
+{% endblock %}

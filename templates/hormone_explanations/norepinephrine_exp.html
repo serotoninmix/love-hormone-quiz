@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="explanation-container">
+    <button onclick="location.href='{{ url_for('index')}}';" class="home-button"></button>
+    <h2>Understanding Norepinephrine in Relationships</h2>
+    <p>
+        Norepinephrine, a key neurotransmitter, and hormone, influences our body's stress responses and emotional arousal, impacting how we experience passion, excitement, and connection in our romantic engagements.
+    </p>
+
+    <h3>Effects of Norepinephrine on Relationships</h3>
+    <ul>
+        <li>
+            <strong>Arousal and Energy:</strong> Norepinephrine boosts alertness and energy, enhancing feelings of excitement and engagement in romantic settings.
+        </li>
+        <li>
+            <strong>Stress and Conflict:</strong> It modulates stress responses, which can affect how we navigate challenges and conflicts in relationships.
+        </li>
+        <li>
+            <strong>Emotional Intensity:</strong> Influencing emotional intensity, norepinephrine can deepen the feelings of connection but also intensify relational tensions.
+        </li>
+    </ul>
+
+    <p>
+        Delving into how norepinephrine affects your romantic dynamics offers valuable insights for fostering deeper bonds and managing emotional challenges. Discover more through the upcoming quiz on your relationship's norepinephrine dynamics.
+    </p>
+
+    <a href="{{ url_for('show_quiz', hormone='norepinephrine') }}" class="button">Begin Norepinephrine Quiz</a>
+</div>
+{% endblock %}

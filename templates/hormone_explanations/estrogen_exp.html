@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="explanation-container">
+    <button onclick="location.href='{{ url_for('index')}}';" class="home-button"></button>
+    <h2>Understanding Estrogen in Relationships</h2>
+    <p>
+        Estrogen significantly influences emotional connection and intimacy, playing a crucial role in nurturing behaviors, communication, and emotional regulation within relationships. It affects not only sexual function but also shapes the depth of emotional and romantic engagements.
+    </p>
+
+    <h3>How Estrogen Influences Relationships</h3>
+    <ul>
+        <li>
+            <strong>Empathy and Connection:</strong> Estrogen fosters empathy and nurturing, facilitating deeper emotional connections and mutual understanding in relationships.
+        </li>
+        <li>
+            <strong>Communication and Intimacy:</strong> Enhanced communication and emotional sensitivity under the influence of estrogen can lead to stronger intimacy and partnership cohesion.
+        </li>
+        <li>
+            <strong>Trust and Cooperation:</strong> Estrogen promotes trust and collaborative behaviors, essential components for maintaining harmony and resolving conflicts in relationships.
+        </li>
+    </ul>
+
+    <p>
+        Grasping estrogen's role in your relationship dynamics offers valuable insights into emotional interactions and bonding. Embark on a journey to explore how estrogen shapes your romantic experiences with the upcoming quiz.
+    </p>
+
+    <a href="{{ url_for('show_quiz', hormone='estrogen') }}" class="button">Begin Estrogen Quiz</a>
+</div>
+{% endblock %}

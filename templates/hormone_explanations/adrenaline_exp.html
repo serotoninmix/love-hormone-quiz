@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="explanation-container">
+    <button onclick="location.href='{{ url_for('index')}}';" class="home-button"></button>
+    <h2>Adrenaline's Role in Your Relationship</h2>
+    <p>
+        Adrenaline, or epinephrine is the spark in thrilling shared moments and can also surge during disagreements, impacting how you both navigate challenges.
+    </p>
+
+    <h3>Key Influences of Adrenaline:</h3>
+    <ul>
+        <li>
+            <strong>Passion Amplifier:</strong> It intensifies shared experiences, injecting energy and excitement into your connection.
+        </li>
+        <li>
+            <strong>Stress Reactor:</strong> During stressful moments, adrenaline's rise can affect both your responses and relationship dynamics.
+        </li>
+        <li>
+            <strong>Risk Enhancer:</strong> It may embolden risk-taking, adding vibrancy to your bond but also necessitating careful navigation.
+        </li>
+    </ul>
+
+    <p>
+        Recognizing adrenaline's influence helps you harness its positives and mitigate challenges, enhancing your relationship's depth and resilience. Ready to explore how adrenaline plays out in your connection?
+    </p>
+
+    <a href="{{ url_for('show_quiz', hormone='adrenaline') }}" class="button">Start the Adrenaline Quiz</a>
+</div>
+{% endblock %}
+

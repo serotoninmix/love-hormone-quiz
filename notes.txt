@@ -1,0 +1,105 @@
+                <a href="/adrenaline_exp">Start the Quiz</a>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+
+/*.question {
+    
+    margin: 20px 0;
+    padding: 15px;
+}
+
+.question p {
+    font-size: 18px;
+    color: #333;
+}
+
+.question input[type="radio"] {
+    margin: 10px 5px 10px 0;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.question label {
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+}*/
+
+def results():
+    user_scores = {hormone: session.get(f'{hormone}_score', 0) for hormone in hormones}
+    interpreter = HormoneResultInterpreter(user_scores)
+    overall_score = interpreter.overall_score
+    overall_interpretation = interpreter.overall_interpretation
+    hormone_definitions = interpreter.get_hormone_definitions()
+    hormone_interpretations = interpreter.hormone_interpretations
+    
+    return render_template('results.html', overall_score=overall_score, 
+                           overall_interpretation=overall_interpretation, 
+                           hormone_definitions=hormone_definitions,
+                           results_data=hormone_interpretations)
+
+
+Prompts:
+Very Low Hormone Levels: 
+Create an image of a non-binary person with very subtle physical traits influenced by hormones. This individual should have a very balanced mix of traditionally masculine and feminine features, with neither being predominant. The setting is a serene forest at dawn, with soft light filtering through the trees. The person is dressed in neutral, earth-toned clothing, sitting peacefully on a fallen log, reflecting the calmness and balance of their hormonal influence.
+
+Low Hormone Levels: 
+Depict a non-binary person in an urban rooftop garden during the early morning. Their features should be a gentle blend of masculine and feminine, slightly more pronounced than the very low hormone level but still quite balanced. They are tending to plants, wearing casual, comfortable attire. The city skyline in the background contrasts with the garden's natural elements, mirroring the person's nuanced blend of traits.
+
+Medium Hormone Levels: 
+Illustrate a non-binary person in a bustling coffee shop setting. Their physical characteristics should show a more noticeable balance of masculine and feminine traits, reflecting a medium hormone level. They are engaging in lively conversation with friends, with the coffee shop's vibrant and diverse atmosphere echoing the individual's more defined features. Their style is eclectic and expressive, showcasing their unique identity.
+
+High Hormone Levels: 
+Create an image of a non-binary person at a beach during sunset. Their features should display a strong blend of masculine and feminine traits, indicative of high hormone levels, with each set of traits being quite pronounced yet harmoniously coexisting. They are walking along the shore, their silhouette highlighted against the setting sun, wearing bold and colorful beachwear that celebrates their vibrant self-expression.
+
+Very High Hormone Levels: 
+Depict a non-binary person in a mountainous landscape under the stars. Their physical appearance should be a striking balance of highly pronounced masculine and feminine features, reflecting very high hormone levels. They are gazing at the night sky, dressed in adventurous, outdoor gear. The majestic and expansive setting emphasizes the person's dynamic and powerful expression of their gender identity.
+
+
+        body {
+            font-family: 'Helvetica', sans-serif;
+            color: #333;
+            background: #f4f4f4;
+            padding: 10px;
+        }
+        .results-container {
+            background: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .results-title {
+            color: #b76e79;
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .overall-results-section, .individual-hormone-results, .hormone-info-section {
+            border-top: 2px solid #b76e79;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        h2 {
+            color: #b76e79;
+            margin-bottom: 8px;
+        }
+        .detailed-feedback, .individual-hormone-result, .hormone-info {
+            padding: 10px;
+            margin-top: 8px;
+            background: #ecf0f1;
+            border-left: 4px solid #b76e79;
+            border-radius: 4px;
+        }
+        .hormone-name, .hormone-title, strong {
+            color: #b76e79;
+        }
+        p {
+            line-height: 1.5;
+            margin: 0 0 10px 0;
+            font-size: 14px;
+        }
+
+
+app.py:
+if __name__ == '__main__':
+    app.run(debug=True)

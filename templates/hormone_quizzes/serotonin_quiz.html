@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form method="post" action="{{ url_for('show_quiz', hormone='serotonin') }}">
+    <h2 class="quiz-h2">Serotonin Quiz</h2>
+
+    <div class="question">
+        <p>1. How consistently do you maintain a stable mood, feel less anxious about a romantic relationship, and manage your emotions effectively?</p>
+        <input type="radio" id="question1_option1" name="question1" value="0">
+        <label for="question1_option1">Rarely maintain stability, often feel anxious, and struggle with emotional management</label><br>
+        
+        <input type="radio" id="question1_option2" name="question1" value="0.5">
+        <label for="question1_option2">Sometimes feel stable and manage emotions reasonably well, with occasional anxiety</label><br>
+        
+        <input type="radio" id="question1_option3" name="question1" value="1">
+        <label for="question1_option3">Often maintain emotional stability, rarely feel anxious, and manage emotions effectively</label><br>
+    </div>
+
+    <div class="question">
+        <p>2. How often do you have a positive outlook on a romantic relationship, feel good about your self-worth within it, and feel satisfied with a partnership?</p>
+        <input type="radio" id="question2_option1" name="question2" value="0">
+        <label for="question2_option1">Seldom have a positive outlook, struggle with self-esteem, and feel dissatisfied</label><br>
+        
+        <input type="radio" id="question2_option2" name="question2" value="0.5">
+        <label for="question2_option2">Occasionally have a positive outlook, have moderate self-esteem, and feel somewhat satisfied</label><br>
+        
+        <input type="radio" id="question2_option3" name="question2" value="1">
+        <label for="question2_option3">Regularly maintain a positive outlook, have high self-esteem, and feel very satisfied</label><br>
+    </div>
+
+    <div class="question">
+        <p>3. How frequently do you control impulsive reactions, engage in positive social behaviors with a partner, and communicate effectively?</p>
+        <input type="radio" id="question3_option1" name="question3" value="0">
+        <label for="question3_option1">Rarely control impulses, engage in positive social behaviors, or communicate effectively</label><br>
+        
+        <input type="radio" id="question3_option2" name="question3" value="0.5">
+        <label for="question3_option2">Sometimes control impulses, engage in positive behaviors, and have effective communication</label><br>
+        
+        <input type="radio" id="question3_option3" name="question3" value="1">
+        <label for="question3_option3">Often control impulses well, consistently engage in positive behaviors, and communicate effectively</label><br>
+    </div>
+
+    <div class="question">
+        <p>4. How often do you feel deeply empathetic towards a partner, experience a strong sense of intimacy, and exhibit a secure attachment style?</p>
+        <input type="radio" id="question4_option1" name="question4" value="0">
+        <label for="question4_option1">Struggle with empathy, rarely feel a deep sense of intimacy, and exhibit insecure attachment</label><br>
+        
+        <input type="radio" id="question4_option2" name="question4" value="0.5">
+        <label for="question4_option2">Occasionally feel empathetic, experience some intimacy, and have a mostly secure attachment</label><br>
+        
+        <input type="radio" id="question4_option3" name="question4" value="1">
+        <label for="question4_option3">Frequently feel highly empathetic, deeply intimate, and have a secure attachment style</label><br>
+    </div>
+
+    <div class="question">
+        <p>5. How effectively do you manage stress within a romantic relationship, support each other during stressful times, and maintain healthy relationship dynamics?</p>
+        <input type="radio" id="question5_option1" name="question5" value="0">
+        <label for="question5_option1">Often struggle with stress, lack mutual support, and have challenging dynamics</label><br>
+        
+        <input type="radio" id="question5_option2" name="question5" value="0.5">
+        <label for="question5_option2">Sometimes manage stress adequately, offer some support, and maintain fair dynamics</label><br>
+        
+        <input type="radio" id="question5_option3" name="question5" value="1">
+        <label for="question5_option3">Consistently manage stress well, provide strong support, and enjoy healthy dynamics</label><br>
+    </div>
+
+    <button type="submit">Continue</button>
+</form>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

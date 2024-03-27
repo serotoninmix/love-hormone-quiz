@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form method="post" action="{{ url_for('show_quiz', hormone='endorphins') }}">
+    <h2 class="quiz-h2">Endorphins Quiz</h2>
+
+    <div class="question">
+        <p>1. How often do you experience feelings of pleasure and relaxation in a romantic relationship, and how effectively do you manage stress together?</p>
+        <input type="radio" id="question1_option1" name="question1" value="0">
+        <label for="question1_option1">Rarely feel pleasure or relaxation and struggle with stress</label><br>
+        
+        <input type="radio" id="question1_option2" name="question1" value="0.5">
+        <label for="question1_option2">Sometimes feel pleasure and relaxation and manage stress adequately</label><br>
+        
+        <input type="radio" id="question1_option3" name="question1" value="1">
+        <label for="question1_option3">Frequently feel pleasure and relaxation and effectively manage stress</label><br>
+    </div>
+
+    <div class="question">
+        <p>2. How strongly do you feel bonded to a partner, how stable are your emotions in the relationship, and how deep is your sense of intimacy?</p>
+        <input type="radio" id="question2_option1" name="question2" value="0">
+        <label for="question2_option1">Rarely feel bonded, often experience emotional instability, and lack intimacy</label><br>
+        
+        <input type="radio" id="question2_option2" name="question2" value="0.5">
+        <label for="question2_option2">Feel somewhat bonded, occasionally have stable emotions, and experience moderate intimacy</label><br>
+        
+        <input type="radio" id="question2_option3" name="question2" value="1">
+        <label for="question2_option3">Feel very bonded, usually have stable emotions, and enjoy deep intimacy</label><br>
+    </div>
+
+    <div class="question">
+        <p>3. How frequently do you empathize with your partner's feelings, act generously towards them, and feel gratitude in your relationship?</p>
+        <input type="radio" id="question3_option1" name="question3" value="0">
+        <label for="question3_option1">Seldom empathize, act generously, or feel grateful</label><br>
+        
+        <input type="radio" id="question3_option2" name="question3" value="0.5">
+        <label for="question3_option2">Occasionally empathize, show generosity, and feel gratitude</label><br>
+        
+        <input type="radio" id="question3_option3" name="question3" value="1">
+        <label for="question3_option3">Often empathize, am generous, and feel significant gratitude</label><br>
+    </div>
+
+    <div class="question">
+        <p>4. How satisfying do you find your physical intimacy, and how optimistic are you about your romantic relationship's future?</p>
+        <input type="radio" id="question4_option1" name="question4" value="0">
+        <label for="question4_option1">Find physical intimacy unsatisfying and lack optimism</label><br>
+        
+        <input type="radio" id="question4_option2" name="question4" value="0.5">
+        <label for="question4_option2">Find physical intimacy somewhat satisfying and am moderately optimistic</label><br>
+        
+        <input type="radio" id="question4_option3" name="question4" value="1">
+        <label for="question4_option3">Find physical intimacy very satisfying and am highly optimistic</label><br>
+    </div>
+
+    <div class="question">
+        <p>5. How willing are you to forgive past issues and how effectively do you resolve conflicts in your romantic relationships?</p>
+        <input type="radio" id="question5_option1" name="question5" value="0">
+        <label for="question5_option1">Rarely forgive and struggle with conflict resolution</label><br>
+        
+        <input type="radio" id="question5_option2" name="question5" value="0.5">
+        <label for="question5_option2">Sometimes forgive and resolve conflicts with some effort</label><br>
+        
+        <input type="radio" id="question5_option3" name="question5" value="1">
+        <label for="question5_option3">Often forgive easily and resolve conflicts effectively</label><br>
+    </div>
+
+    <button type="submit">Continue</button>
+</form>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

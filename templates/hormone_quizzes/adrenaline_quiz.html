@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form method="post" action="{{ url_for('show_quiz', hormone='adrenaline') }}">
+    <h2 class="quiz-h2">Adrenaline Quiz</h2>
+
+    <div class="question">
+        <p>1. How often do you experience intense passion, elevated moods, and strong physical attraction in a relationship?</p>
+        <input type="radio" id="question1_option1" name="question1" value="0">
+        <label for="question1_option1">Rarely experience these feelings</label><br>
+        
+        <input type="radio" id="question1_option2" name="question1" value="0.5">
+        <label for="question1_option2">Sometimes experience these feelings</label><br>
+        
+        <input type="radio" id="question1_option3" name="question1" value="1">
+        <label for="question1_option3">Frequently experience these intense feelings</label><br>
+    </div>
+
+    <div class="question">
+        <p>2. How inclined are you to seek adventurous experiences, embrace a sense of adventure, and take risks in a relationship?</p>
+        <input type="radio" id="question2_option1" name="question2" value="0">
+        <label for="question2_option1">Rarely seek adventure or take risks</label><br>
+        
+        <input type="radio" id="question2_option2" name="question2" value="0.5">
+        <label for="question2_option2">Occasionally seek adventure and take moderate risks</label><br>
+        
+        <input type="radio" id="question2_option3" name="question2" value="1">
+        <label for="question2_option3">Often seek thrilling adventures and take significant risks</label><br>
+    </div>
+
+    <div class="question">
+        <p>3. How do you rate your energy levels, awareness of your partner, and tendency to act impulsively in a relationship?</p>
+        <input type="radio" id="question3_option1" name="question3" value="0">
+        <label for="question3_option1">Low energy, limited awareness, and rarely impulsive</label><br>
+        
+        <input type="radio" id="question3_option2" name="question3" value="0.5">
+        <label for="question3_option2">Moderate energy, adequate awareness, and occasionally impulsive</label><br>
+        
+        <input type="radio" id="question3_option3" name="question3" value="1">
+        <label for="question3_option3">High energy, acute awareness, and often impulsive</label><br>
+    </div>
+
+    <div class="question">
+        <p>4. How would you describe your emotional intensity, experiences of jealousy, and your approach to conflict resolution in a relationship?</p>
+        <input type="radio" id="question4_option1" name="question4" value="0">
+        <label for="question4_option1">Rarely intense emotions, little jealousy, and passive conflict resolution</label><br>
+        
+        <input type="radio" id="question4_option2" name="question4" value="0.5">
+        <label for="question4_option2">Moderately intense emotions, occasional jealousy, and balanced conflict resolution</label><br>
+        
+        <input type="radio" id="question4_option3" name="question4" value="1">
+        <label for="question4_option3">Very intense emotions, frequent jealousy, and assertive conflict resolution</label><br>
+    </div>
+
+    <div class="question">
+        <p>5. How strong is your physical attraction to a partner and how deep is your emotional connection with them?</p>
+        <input type="radio" id="question5_option1" name="question5" value="0">
+        <label for="question5_option1">Limited physical attraction and shallow emotional connection</label><br>
+        
+        <input type="radio" id="question5_option2" name="question5" value="0.5">
+        <label for="question5_option2">Good physical attraction and moderate emotional connection</label><br>
+        
+        <input type="radio" id="question5_option3" name="question5" value="1">
+        <label for="question5_option3">Intense physical attraction and deep emotional connection</label><br>
+    </div>
+
+    <button type="submit">Continue</button>
+</form>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
+

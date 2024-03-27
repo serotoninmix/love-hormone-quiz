@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="explanation-container">
+    <button onclick="location.href='{{ url_for('index')}}';" class="home-button"></button>
+    <h2>Endorphins: The Joy in Relationships</h2>
+    <p>
+        Known as the body's natural painkillers, endorphins elevate mood, enhance pleasure, and can deepen the joy and connection in your romantic life. They play a key role in fostering a sense of well-being and contentment in relationships.
+    </p>
+
+    <h3>The Influence of Endorphins in Love</h3>
+    <ul>
+        <li>
+            <strong>Emotional Warmth:</strong> By nurturing feelings of happiness and pleasure, endorphins can create a warm emotional climate between partners.
+        </li>
+        <li>
+            <strong>Stress Alleviation:</strong> These biochemical allies can help you navigate stress, fostering a more peaceful and supportive partnership.
+        </li>
+        <li>
+            <strong>Deepened Bonding:</strong> Through shared joy and comfort, endorphins promote a stronger, more intimate bond between partners.
+        </li>
+    </ul>
+
+    <p>
+        Grasping the essence of endorphins in your relationship illuminates the paths to mutual contentment and emotional richness. Delve into how endorphins play out in your love life through the upcoming quiz.
+    </p>
+
+    <a href="{{ url_for('show_quiz', hormone='endorphins') }}" class="button">Take the Endorphins Quiz</a>
+</div>
+{% endblock %}

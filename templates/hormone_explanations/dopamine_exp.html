@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="explanation-container">
+    <button onclick="location.href='{{ url_for('index')}}';" class="home-button"></button>
+    <h2>Dopamine's Influence in Relationships</h2>
+    <p>
+        Dopamine, often dubbed the "feel-good" neurotransmitter, underpins the pleasure and reward centers in our brains. It's pivotal in shaping attraction, motivation, and emotional bonding in your love life, offering those butterflies-in-the-stomach moments and deep satisfaction from your shared joy.
+    </p>
+
+    <h3>Dopamine's Key Roles in Love:</h3>
+    <ul>
+        <li>
+            <strong>Heightened Pleasure:</strong> It boosts joy and gratification, deepening your enjoyment of togetherness.
+        </li>
+        <li>
+            <strong>Deepened Attraction:</strong> Dopamine elevates feelings of attraction and longing, intensifying your romantic connection.
+        </li>
+        <li>
+            <strong>Emotional Bonding:</strong> It fosters strong emotional ties, promoting enduring attachment and mutual devotion.
+        </li>
+    </ul>
+
+    <p>
+        Grasping dopamine's impact can illuminate why certain moments with your partner feel so exhilarating. The upcoming quiz will explore how dopamine weaves its magic in your relationship dynamics.
+    </p>
+
+    <a href="{{ url_for('show_quiz', hormone='dopamine') }}" class="button">Start the Dopamine Quiz</a>
+</div>
+{% endblock %}

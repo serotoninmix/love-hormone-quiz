@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form method="post" action="{{ url_for('show_quiz', hormone='testosterone') }}">
+    <h2 class="quiz-h2">Testosterone Quiz</h2>
+
+    <div class="question">
+        <p>1. How would you rate your level of sexual desire and physical attraction toward a romantic partner?</p>
+        <input type="radio" id="question1_option1" name="question1" value="0">
+        <label for="question1_option1">Rarely feel sexual desire or physical attraction</label><br>
+        
+        <input type="radio" id="question1_option2" name="question1" value="0.5">
+        <label for="question1_option2">Sometimes feel sexual desire and physical attraction</label><br>
+        
+        <input type="radio" id="question1_option3" name="question1" value="1">
+        <label for="question1_option3">Often feel strong sexual desire and intense physical attraction</label><br>
+    </div>
+
+    <div class="question">
+        <p>2. How often do you exhibit assertiveness and feel self-confident in your interactions and decision-making within a romantic relationship?</p>
+        <input type="radio" id="question2_option1" name="question2" value="0">
+        <label for="question2_option1">Rarely assertive or self-confident</label><br>
+        
+        <input type="radio" id="question2_option2" name="question2" value="0.5">
+        <label for="question2_option2">Occasionally assertive and somewhat self-confident</label><br>
+        
+        <input type="radio" id="question2_option3" name="question2" value="1">
+        <label for="question2_option3">Frequently assertive and highly self-confident</label><br>
+    </div>
+
+    <div class="question">
+        <p>3. How inclined are you to compete for a partner's attention or to assert dominance in your relationship dynamics?</p>
+        <input type="radio" id="question3_option1" name="question3" value="0">
+        <label for="question3_option1">Not inclined toward competitiveness or dominance</label><br>
+        
+        <input type="radio" id="question3_option2" name="question3" value="0.5">
+        <label for="question3_option2">Somewhat inclined to compete and occasionally display dominance</label><br>
+        
+        <input type="radio" id="question3_option3" name="question3" value="1">
+        <label for="question3_option3">Highly competitive and often seek to assert dominance</label><br>
+    </div>
+
+    <div class="question">
+        <p>4. How likely are you to take risks in a romantic relationship, whether in expressing your feelings or engaging in adventurous activities together?</p>
+        <input type="radio" id="question4_option1" name="question4" value="0">
+        <label for="question4_option1">Rarely take risks</label><br>
+        
+        <input type="radio" id="question4_option2" name="question4" value="0.5">
+        <label for="question4_option2">Sometimes take moderate risks</label><br>
+        
+        <input type="radio" id="question4_option3" name="question4" value="1">
+        <label for="question4_option3">Frequently engage in risk-taking behaviors</label><br>
+    </div>
+
+    <div class="question">
+        <p>5. How do you typically respond to conflicts or disagreements in a romantic relationship, particularly regarding aggression or confrontational behavior?</p>
+        <input type="radio" id="question5_option1" name="question5" value="0">
+        <label for="question5_option1">Rarely respond aggressively or confrontationally</label><br>
+        
+        <input type="radio" id="question5_option2" name="question5" value="0.5">
+        <label for="question5_option2">Sometimes respond with mild aggression or confrontation</label><br>
+        
+        <input type="radio" id="question5_option3" name="question5" value="1">
+        <label for="question5_option3">Often respond aggressively or confrontationally</label><br>
+    </div>
+
+    <button type="submit">Continue</button>
+</form>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

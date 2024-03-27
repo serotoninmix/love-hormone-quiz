@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form method="post" action="{{ url_for('show_quiz', hormone='vasopressin') }}">
+    <h2 class="quiz-h2">Vasopressin Quiz</h2>
+
+    <div class="question">
+        <p>1. How strongly do you feel emotionally attached to a partner, committed to a long-term monogamous relationship, and secure in your romantic bond?</p>
+        <input type="radio" id="question1_option1" name="question1" value="0">
+        <label for="question1_option1">Rarely or never feel attached or committed, and often feel insecure</label><br>
+        
+        <input type="radio" id="question1_option2" name="question1" value="0.5">
+        <label for="question1_option2">Sometimes feel attached and committed, with a moderate sense of security</label><br>
+        
+        <input type="radio" id="question1_option3" name="question1" value="1">
+        <label for="question1_option3">Often feel very attached and committed, with a strong sense of security</label><br>
+    </div>
+
+    <div class="question">
+        <p>2. How often do you experience strong feelings of trust towards a partner, a desire to protect them, and a deep sense of social connection with them?</p>
+        <input type="radio" id="question2_option1" name="question2" value="0">
+        <label for="question2_option1">Rarely or never experience these feelings</label><br>
+        
+        <input type="radio" id="question2_option2" name="question2" value="0.5">
+        <label for="question2_option2">Sometimes experience these feelings</label><br>
+        
+        <input type="radio" id="question2_option3" name="question2" value="1">
+        <label for="question2_option3">Often experience these feelings strongly</label><br>
+    </div>
+
+    <div class="question">
+        <p>3. How frequently do you exhibit assertiveness or dominance in a romantic relationship, particularly in competitive contexts or when resolving conflicts?</p>
+        <input type="radio" id="question3_option1" name="question3" value="0">
+        <label for="question3_option1">Rarely or never exhibit these behaviors</label><br>
+        
+        <input type="radio" id="question3_option2" name="question3" value="0.5">
+        <label for="question3_option2">Sometimes exhibit these behaviors</label><br>
+        
+        <input type="radio" id="question3_option3" name="question3" value="1">
+        <label for="question3_option3">Often exhibit these behaviors</label><br>
+    </div>
+
+    <div class="question">
+        <p>4. How intense is your sexual interest and activity within a romantic relationship, and how selective are you in choosing a romantic partner?</p>
+        <input type="radio" id="question4_option1" name="question4" value="0">
+        <label for="question4_option1">Have low sexual interest and activity, and not particularly selective</label><br>
+        
+        <input type="radio" id="question4_option2" name="question4" value="0.5">
+        <label for="question4_option2">Have moderate sexual interest and activity, and somewhat selective</label><br>
+        
+        <input type="radio" id="question4_option3" name="question4" value="1">
+        <label for="question4_option3">Have high sexual interest and activity, and very selective</label><br>
+    </div>
+
+    <div class="question">
+        <p>5. How consistently do you manage your emotions in a romantic relationship, and how often do you engage in nurturing or caregiving behaviors towards a partner?</p>
+        <input type="radio" id="question5_option1" name="question5" value="0">
+        <label for="question5_option1">Struggle with emotional regulation and rarely engage in caregiving behaviors</label><br>
+        
+        <input type="radio" id="question5_option2" name="question5" value="0.5">
+        <label for="question5_option2">Sometimes manage emotions well and occasionally engage in caregiving behaviors</label><br>
+        
+        <input type="radio" id="question5_option3" name="question5" value="1">
+        <label for="question5_option3">Often manage emotions effectively and frequently engage in caregiving behaviors</label><br>
+    </div>
+
+    <button type="submit">Continue</button>
+</form>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
