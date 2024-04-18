@@ -11,7 +11,7 @@
         body {
             font-family: 'Helvetica', sans-serif;
             color: #333;
-            background: #f4f4f4;
+            background: #f4f4f4; 
             padding: 10px;
         }
         .results-container {
@@ -39,7 +39,7 @@
         .detailed-feedback, .individual-hormone-result, .hormone-info {
             padding: 10px;
             margin-top: 8px;
-            background: #ecf0f1;
+            background: #fcf7fc;
             border-left: 4px solid #b76e79;
             border-radius: 4px;
         }
@@ -51,15 +51,20 @@
             margin: 0 0 10px 0;
             font-size: 14px;
         }
+        .text-center {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="results-container">
         <h1 class="results-title">Your Hormonal Profile Results</h1>
-
+        <p class="text-center">Please note that the personal information you provide here is kept strictly confidential and is solely used for the analysis of your quiz results.</p>
+        <p class="text-center">Our goal is to enhance our understanding of human hormonal behaviors and interactions. Your privacy is of utmost importance to us.</p>
+        <p class="text-center">If you want more content like this, or to comment and provide feedback, visit:</p>
+        <p style="text-align: center;"><a href="https://www.mariaspectrum.xyz" target="_blank">MariaSpectrum.xyz</a></p>
+   
         <section class="overall-results-section">
-            <div class="results-flex-container">
-                <img src="{{ url_for('static', filename='img/' + result_image) }}" alt="Result Image" class="result-image"/>
             <h2 class="overall-heading">Overall Results</h2>
             <p><strong>Your score: {{ overall_score }}/10</strong></p>
             <p><strong>Level: {{ overall_interpretation.level }}</strong></p>
