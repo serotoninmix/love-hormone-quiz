@@ -103,3 +103,168 @@ Depict a non-binary person in a mountainous landscape under the stars. Their phy
 app.py:
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+What requirements should be on my requirements.txt? What is Procfile? Do I have it? How do I write it?
+.
+├── __pycache__
+│   └── app.cpython-311.pyc
+├── app.py
+├── notes.txt
+├── quiz-app.code-workspace
+├── requirements.txt
+├── results
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   └── interpreter.cpython-311.pyc
+│   └── interpreter.py
+├── static
+│   ├── css
+│   │   └── style.css
+│   ├── img
+│   │   ├── 100112.jpg
+│   │   ├── 27935.jpg
+│   │   └── home-icon.svg
+│   └── js
+│       └── script.js
+├── templates
+│   ├── hormone_explanations
+│   │   ├── adrenaline_exp.html
+│   │   ├── dopamine_exp.html
+│   │   ├── endorphins_exp.html
+│   │   ├── estrogen_exp.html
+│   │   ├── norepinephrine_exp.html
+│   │   ├── oxytocin_exp.html
+│   │   ├── serotonin_exp.html
+│   │   ├── testosterone_exp.html
+│   │   └── vasopressin_exp.html
+│   ├── hormone_quizzes
+│   │   ├── adrenaline_quiz.html
+│   │   ├── dopamine_quiz.html
+│   │   ├── endorphins_quiz.html
+│   │   ├── estrogen_quiz.html
+│   │   ├── norepinephrine_quiz.html
+│   │   ├── oxytocin_quiz.html
+│   │   ├── serotonin_quiz.html
+│   │   ├── testosterone_quiz.html
+│   │   └── vasopressin_quiz.html
+│   ├── index.html
+│   ├── layout.html
+│   ├── results.html
+│   ├── results_email.html
+│   ├── results_pdf.html
+│   └── user_data_form.html
+└── venv
+
+
+.overall-results-section {
+    background-color: rgba(247, 247, 247, 0.5);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+##CHANGING IMAGE + OVERALL RESULTS 
+Initial State (how I found it):
+.results-flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center; /* Vertically center the items in the container */
+    justify-content: flex-start; /* Align items to the start of the main-axis */
+    gap: 20px; /* Adds space between flex items */
+}
+
+.overall-results-section {
+    flex-grow: 1;
+    flex-basis: 50%;
+    background-color: rgba(247, 247, 247, 0.5);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.result-image {
+    order: -1;
+    max-width: 30%;
+    height: auto;
+    flex: 0 1 auto;
+}
+
+.individual-hormone-result {
+    background-color: rgba(247, 247, 247, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+results.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Hormonal Profile Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6603ca504b7861001255eeb5&product=inline-share-buttons&source=platform" async="async"></script>
+</head>
+<body>
+    <div class="results-container">
+        <h1 class="results-title">Your Hormonal Profile Results</h1>
+    
+            <section class="overall-results-section">
+            <div class="results-flex-container">
+                <img src="{{ url_for('static', filename='img/' + result_image) }}" alt="Result Image" class="result-image"/>
+            <div class="results-details">
+                <h2 class="overall-heading">Overall Results</h2>
+                <p id="overall-score-display"><strong>Your score: {{ overall_score }}/10</strong></p>
+                <p id="overall-level-display"><strong>Level: {{ overall_interpretation.level }}</strong></p>
+                <p id="overall-interpretation-display">Interpretation: {{ overall_interpretation.interpretation }}</p>
+                <div class="detailed-feedback">
+                    <h3>Detailed Feedback</h3>
+                    <p><strong>Understanding:</strong> {{ detailed_feedback.Understanding }}</p>
+                    <p><strong>Actionable Steps:</strong> {{ detailed_feedback['Actionable Steps'] }}</p>
+                    <p><strong>Encouragement:</strong> {{ detailed_feedback.Encouragement }}</p>
+                </div>
+            </div>
+            </div>
+            </section>        
+
+        <section class="individual-hormone-results">
+            <h2 class="hormone-results-heading">Individual Hormone Results</h2>
+            {% for hormone, data in results_data.items() %}
+            <div class="individual-hormone-result">
+                <h3 class="hormone-name">{{ hormone.capitalize() }} Results</h3>
+                <p class="hormone-level"><strong>Level: {{ data['level'] }}</strong></p>
+                <p class="hormone-interpretation">Interpretation: {{ data['interpretation'] }}</p>
+            </div>
+            {% endfor %}
+        </section>  
+        <a href="{{ url_for('results_pdf') }}" class="button">Download PDF</a>
+        <div class="sharethis-inline-share-buttons"></div>            
+
+        <section class="hormone-info-section">
+            <h2 class="hormone-info-heading">Hormone Information</h2>
+            {% for hormone, definition in hormone_definitions.items() %}
+            <div class="hormone-info">
+                <h3 class="hormone-title">{{ hormone.capitalize() }}</h3>
+                <p class="hormone-description">{{ definition }}</p>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</body>
+</html>
+
+
+# UPDATE: April 12th, 20:44
+1. PDF isn't rendering the image
+2. Image in PDF isn't configured to flex like in results.html 
+3. PDF results filename isn't accurate
+4. Need to add website logo + domain + copyright label + social media + description of fair and privacy usages
+5. PDF is not formated to keep every container in the same page or pass the whole container to the next.

@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, session, make_response
 from results.interpreter import HormoneResultInterpreter
 from weasyprint import HTML
@@ -57,13 +58,23 @@ def results():
     detailed_feedback = interpreter.get_detailed_feedback(overall_interpretation['level'])
     hormone_definitions = interpreter.get_hormone_definitions()
     hormone_interpretations = interpreter.hormone_interpretations
+
+    level = overall_interpretation['level']
+    result_images = {
+        'Very Low': 'very-low.png',
+        'Low': 'low.png',
+        'Medium': 'medium.png',
+        'High': 'high.png',
+        'Very High': 'very-high.png'
+    }
+    result_image = result_images[level]
     
     return render_template('results.html', overall_score=overall_score, 
                            overall_interpretation=overall_interpretation, 
                            detailed_feedback=detailed_feedback,
                            hormone_definitions=hormone_definitions,
-                           results_data=hormone_interpretations)
-
+                           results_data=hormone_interpretations,
+                           result_image=result_image)
 
 @app.route('/results/pdf')
 def results_pdf():
@@ -75,13 +86,25 @@ def results_pdf():
     detailed_feedback = interpreter.get_detailed_feedback(overall_interpretation['level'])
     hormone_definitions = interpreter.get_hormone_definitions()
     hormone_interpretations = interpreter.hormone_interpretations
+
+    # Last added:
+    level = overall_interpretation['level']
+    result_images = {
+        'Very Low': 'very-low.png',
+        'Low': 'low.png',
+        'Medium': 'medium.png',
+        'High': 'high.png',
+        'Very High': 'very-high.png'
+    }
+    result_image = result_images[level]
     
     # Make sure to pass the same data you pass to the results page
     html = render_template('results_pdf.html', overall_score=overall_score, 
                            overall_interpretation=overall_interpretation, 
                            detailed_feedback=detailed_feedback,
                            hormone_definitions=hormone_definitions,
-                           results_data=hormone_interpretations)
+                           results_data=hormone_interpretations,
+                           result_image=result_image)
 
     pdf = HTML(string=html).write_pdf()
     response = make_response(pdf)
@@ -90,4 +113,4 @@ def results_pdf():
     return response
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 8000)))

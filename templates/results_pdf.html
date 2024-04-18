@@ -58,6 +58,8 @@
         <h1 class="results-title">Your Hormonal Profile Results</h1>
 
         <section class="overall-results-section">
+            <div class="results-flex-container">
+                <img src="{{ url_for('static', filename='img/' + result_image) }}" alt="Result Image" class="result-image"/>
             <h2 class="overall-heading">Overall Results</h2>
             <p><strong>Your score: {{ overall_score }}/10</strong></p>
             <p><strong>Level: {{ overall_interpretation.level }}</strong></p>
@@ -67,6 +69,7 @@
                 <p><strong>Understanding:</strong> {{ detailed_feedback.Understanding }}</p>
                 <p><strong>Actionable Steps:</strong> {{ detailed_feedback['Actionable Steps'] }}</p>
                 <p><strong>Encouragement:</strong> {{ detailed_feedback.Encouragement }}</p>
+            </div>
             </div>
         </section>        
 

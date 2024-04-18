@@ -11,22 +11,27 @@
 <body>
     <div class="results-container">
         <h1 class="results-title">Your Hormonal Profile Results</h1>
-
-        <section class="overall-results-section">
-            <h2 class="overall-heading">Overall Results</h2>
-            <p id="overall-score-display"><strong>Your score: {{ overall_score }}/10</strong></p>
-            <p id="overall-level-display"><strong>Level: {{ overall_interpretation.level }}</strong></p>
-            <p id="overall-interpretation-display">Interpretation: {{ overall_interpretation.interpretation }}</p>
-            <div class="detailed-feedback">
-                <h3>Detailed Feedback</h3>
-                <p><strong>Understanding:</strong> {{ detailed_feedback.Understanding }}</p>
-                <p><strong>Actionable Steps:</strong> {{ detailed_feedback['Actionable Steps'] }}</p>
-                <p><strong>Encouragement:</strong> {{ detailed_feedback.Encouragement }}</p>
+    
+            <section class="overall-results-section">
+            <div class="results-flex-container">
+                <img src="{{ url_for('static', filename='img/' + result_image) }}" alt="Result Image" class="result-image"/>
+            <div class="results-details">
+                <h2 class="overall-heading">Overall Results</h2>
+                <p id="overall-score-display"><strong>Your score: {{ overall_score }}/10</strong></p>
+                <p id="overall-level-display"><strong>Level: {{ overall_interpretation.level }}</strong></p>
+                <p id="overall-interpretation-display">Interpretation: {{ overall_interpretation.interpretation }}</p>
             </div>
-        </section>        
+            </div>
+                <div class="detailed-feedback">
+                    <h3>Detailed Feedback</h3>
+                    <p><strong>Understanding:</strong> {{ detailed_feedback.Understanding }}</p>
+                    <p><strong>Actionable Steps:</strong> {{ detailed_feedback['Actionable Steps'] }}</p>
+                    <p><strong>Encouragement:</strong> {{ detailed_feedback.Encouragement }}</p>
+                </div>
+            </section>        
 
         <section class="individual-hormone-results">
-            <h2 class="hormone-results-heading">Individual Hormone Results</h2>
+            <h1 class="hormone-results-heading">Individual Hormone Results</h1>
             {% for hormone, data in results_data.items() %}
             <div class="individual-hormone-result">
                 <h3 class="hormone-name">{{ hormone.capitalize() }} Results</h3>
